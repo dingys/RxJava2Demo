@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 return new MobileAddress();
             }
-        }).observeOn(Schedulers.io()).doOnNext(new Consumer<MobileAddress>() {
+        }).observeOn(AndroidSchedulers.mainThread()).doOnNext(new Consumer<MobileAddress>() {
             @Override
             public void accept(@NonNull MobileAddress mobileAddress) throws Exception {
                 Log.i(TAG, "onAccept" + mobileAddress.toString() + " " + Thread.currentThread().getName());
